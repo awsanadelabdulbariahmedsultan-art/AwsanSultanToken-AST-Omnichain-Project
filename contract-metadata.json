@@ -1,0 +1,15 @@
+{
+  "name": "Awsan Sultan Ecosystem",
+  "description": "The official digital ecosystem of Eng. Awsan Adel Abdulbari Ahmed Sultan. This project integrates AST (Omnichain Token) and 45,000 unique Generative Arts (ASA). Intellectual Property Registered - ID 01010305468.",
+  "image": "https://github.com",
+  "external_link": "https://github.com",
+  "seller_fee_basis_points": 1000, 
+  "fee_recipient": "0x79fd74ae9cd16838fd2bf61274cda5c37da1f714",
+  "creator": {
+    "name": "Eng. Awsan Adel Abdulbari Ahmed Sultan",
+    "location": "YEMEN",
+    "id": "01010305468",
+    "contact": "awsan.sultan@gmail.com",
+    "phone": "+967777852433"
+  }
+}
