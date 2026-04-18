@@ -6,9 +6,9 @@
 # Country: YEMEN | Phone: +967 777852433 | Wallet: RABBY (Official Verified)
 # ---------------------------------------------------------------------------------------------
 # 🔗 OFFICIAL REPOSITORY NETWORK:
-# 1. Main Hub: ://github.com
-# 2. Support: ://github.com
-# 3. Omnichain: ://github.com
+# 1. https://github.com/awsanadelabdulbariahmedsultan-art/Awsan-Sultan-Crypto-Ecosystem-project
+# 2. https://github.com/awsanadelabdulbariahmedsultan-art/Awsan-Adel-Sultan-Supporting-
+# 3. https://github.com/awsanadelabdulbariahmedsultan-art/AwsanSultanToken-
 # ---------------------------------------------------------------------------------------------
 # Copyright (c) 2026. All Rights Reserved. Intellectual Property of Eng. Awsan Sultan.
 # =============================================================================================
