@@ -35,8 +35,8 @@ The source code and the underlying logic of this ecosystem are the exclusive pro
 ---
 
 ## 🔗 Connect with the Creator
-[![LinkedIn](https://shields.io)](https://linkedin.com)
-[![GitHub](https://shields.io)](https://github.com)
+[![LinkedIn](https://shields.io)]([https://linkedin.com](https://www.linkedin.com/in/awsan-adel-abdulbari-ahmed-sultan-8aa5a1a9?utm_source=share_via&utm_content=profile&utm_medium=member))
+[![GitHub](https://shields.io)]([https://github.com](https://github.com/awsanadelabdulbariahmedsultan-art/AwsanSultanToken-AST-Omnichain-Project))
 
 ---
 *Built with precision. Deployed for the future.*
