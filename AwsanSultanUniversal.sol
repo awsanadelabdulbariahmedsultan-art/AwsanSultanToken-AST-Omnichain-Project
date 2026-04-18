@@ -57,7 +57,7 @@ contract AwsanSultanUniversal is ERC20, ERC20Permit, ERC721Enumerable, ERC2981, 
     }
 
     function contractURI() public pure returns (string memory) {
-        return "https://githubusercontent.com";
+        return "https://github.com/awsanadelabdulbariahmedsultan-art/AwsanSultanToken-AST-Omnichain-Project";
     }
 
     function supportsInterface(bytes4 interfaceId) public view override(ERC721Enumerable, ERC2981) returns (bool) {
