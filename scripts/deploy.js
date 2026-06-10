@@ -1,31 +1,25 @@
-const hre = require("hardhat");
+import { ethers } from "hardhat";
 
-async main() {
-  const [deployer] = await hre.ethers.getSigners();
-  console.log("جاري نشر العقود باستخدام المحفظة:", deployer.address);
+async function main() {
+  console.log("🚀 جاري البدء في نشر منظومة أوسان سلطان الرقمية...");
 
-  // 1. نشر عملة AWSAN SULTAN TOKEN (AST)
-  console.log("جاري نشر عملة AST الرقمية البالغ عددها 9041993000...");
-  const Token = await hre.ethers.getContractFactory("AwsanSultanToken");
+  // نشر عقد عملة Awsan Sultan Token (AST)
+  const Token = await ethers.getContractFactory("AwsanSultanToken");
   const token = await Token.deploy();
   await token.waitForDeployment();
   const tokenAddress = await token.getAddress();
-  console.log("تم نشر العملة بنجاح! عنوان العقد هو:", tokenAddress);
+  console.log(`✅ تم نشر عملة (AST) بنجاح على العنوان: ${tokenAddress}`);
 
-  // 2. نشر الـ NFT باسم ASA AWSAN SULTAN ART
-  console.log("جاري نشر عقد الـ NFT (ASA)...");
-  const NFT = await hre.ethers.getContractFactory("AwsanSultanArt");
-  const nft = await NFT.deploy();
-  await nft.waitForDeployment();
-  const nftAddress = await nft.getAddress();
-  console.log("تم نشر الـ NFT بنجاح! عنوان العقد هو:", nftAddress);
-
-  console.log("\n--- ملخص النشر ---");
-  console.log(`عقد العملة (AST): ${tokenAddress}`);
-  console.log(`عقد الـ NFT (ASA): ${nftAddress}`);
+  // نشر عقد الفن الرقمي Awsan Sultan Art (ASA)
+  const Art = await ethers.getContractFactory("AwsanSultanArt");
+  const art = await Art.deploy();
+  await art.waitForDeployment();
+  const artAddress = await art.getAddress();
+  console.log(`✅ تم نشر فن (ASA) بنجاح على العنوان: ${artAddress}`);
 }
 
 main().catch((error) => {
+  console.error("❌ حدث خطأ أثناء عملية النشر:");
   console.error(error);
   process.exitCode = 1;
 });
