@@ -1,28 +1,31 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity 0.8.28;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-/**
- * @title Awsan Sultan Token (AST)
- * @dev Where Engineering Excellence Meets Decentralized Innovation.
- * Exclusive Property of Eng. Awsan Adel Abdulbari Ahmed Sultan.
- */
 contract AwsanSultanToken is ERC20, ERC20Permit, Ownable {
     
-    // توثيق الملكية الفكرية الثابتة غير القابلة للتعديل في البلوكشين
     string public constant CREATOR = "Eng. Awsan Adel Abdulbari Ahmed Sultan";
-    string public constant CREATOR_ID = "ID 01010305468";
-    string public constant LOCATION = "Yemen";
-    
+    string public constant CONTACT = "YEMEN | +967777852433 | awsan.sultan@gmail.com";
+    uint256 public constant AST_SUPPLY = 9041993000 * 10**18;
+    bool public paused = false;
+
     constructor() 
         ERC20("Awsan Sultan Token", "AST") 
-        ERC20Permit("Awsan Sultan Token") 
-        Ownable(msg.sender) 
+        ERC20Permit("Awsan Sultan Token")
+        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)  
     {
-        // سك المعروض الإجمالي التكريمي: 9,041,993,000 توكن مع 18 خانة عشرية
-        _mint(msg.sender, 9041993000 * 10 ** decimals());
+        _mint(owner(), AST_SUPPLY);
+    }
+
+    function setPaused(bool _state) external onlyOwner {
+        paused = _state;
+    }
+
+    function _update(address from, address to, uint256 value) internal override(ERC20) {
+        require(!paused, "System is paused for security maintenance");
+        super._update(from, to, value);
     }
 }
