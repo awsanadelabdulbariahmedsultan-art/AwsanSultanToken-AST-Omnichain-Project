@@ -1,14 +1,23 @@
 import { ethers } from "ethers";
 import hre from "hardhat";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function main() {
   console.log("🚀 Initializing Awsan Sultan Ecosystem Deployment...");
 
+  # جلب ملفات التجميع الخاصة بالعقود بدقة
   const TokenArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanToken.sol:AwsanSultanToken");
   const ArtArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanArt.sol:AwsanSultanArt");
 
-  const networkUrl = hre.network.config.url;
-  const privateKey = hre.network.config.accounts;
+  # قراءة الروابط والمفاتيح مباشرة من ملف .env لضمان الاستقرار التام
+  const networkUrl = process.env.BASE_SEPOLIA_RPC_URL || "https://base.org";
+  const privateKey = process.env.PRIVATE_KEY;
+
+  if (!privateKey) {
+    throw new Error("❌ PRIVATE_KEY is missing in your .env file!");
+  }
 
   const provider = new ethers.JsonRpcProvider(networkUrl);
   const wallet = new ethers.Wallet(privateKey, provider);
