@@ -1,7 +1,10 @@
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
 async function main() {
   console.log("🚀 جاري البدء في نشر منظومة أوسان سلطان الرقمية...");
+
+  // استخراج مكتبة ethers البرمجية من داخل بيئة التشغيل الحالية
+  const { ethers } = hre;
 
   // نشر عقد عملة Awsan Sultan Token (AST)
   const Token = await ethers.getContractFactory("AwsanSultanToken");
