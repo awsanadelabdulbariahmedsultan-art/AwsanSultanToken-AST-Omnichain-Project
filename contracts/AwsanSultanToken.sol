@@ -12,12 +12,13 @@ contract AwsanSultanToken is ERC20, ERC20Permit, Ownable {
     uint256 public constant AST_SUPPLY = 9041993000 * 10**18;
     bool public paused = false;
 
+    // تم وضع العنوان كـ Placeholder، وإذا كان التشفير غير مطابق، يتم الاعتماد على الناشر تجريبياً
     constructor() 
         ERC20("Awsan Sultan Token", "AST") 
         ERC20Permit("Awsan Sultan Token")
-        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)     
+        Ownable(msg.sender) 
     {
-        _mint(owner(), AST_SUPPLY);
+        _mint(msg.sender, AST_SUPPLY);
     }
 
     function setPaused(bool _state) external onlyOwner {

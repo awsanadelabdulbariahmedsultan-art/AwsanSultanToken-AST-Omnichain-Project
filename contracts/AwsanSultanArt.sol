@@ -16,9 +16,9 @@ contract AwsanSultanArt is ERC721Enumerable, ERC2981, Ownable {
 
     constructor() 
         ERC721("Awsan Sultan Art", "ASA")
-        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)     
+        Ownable(msg.sender) 
     {
-        _setDefaultRoyalty(owner(), 1000); // 10% عوائد ثابتة للمهندس أوسان
+        _setDefaultRoyalty(msg.sender, 1000); // 10% عوائد ثابتة للمهندس أوسان تجريبياً
     }
 
     function setPaused(bool _state) external onlyOwner {
@@ -39,7 +39,7 @@ contract AwsanSultanArt is ERC721Enumerable, ERC2981, Ownable {
     }
 
     function contractURI() public pure returns (string memory) {
-        return "https://github.com/awsanadelabdulbariahmedsultan-art/AwsanSultanToken-AST-Omnichain-Project";
+        return "https://github.com";
     }
 
     function supportsInterface(bytes4 interfaceId) public view override(ERC721Enumerable, ERC2981) returns (bool) {
