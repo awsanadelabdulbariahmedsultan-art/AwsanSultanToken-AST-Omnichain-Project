@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/awsanadelabdulbariahmedsultan-art/AwsanSultanToken-AST-Omnichain-Project#readme",
   "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.13",
     "@nomicfoundation/hardhat-toolbox": "^7.0.0",
     "@nomicfoundation/hardhat-toolbox-viem": "^5.0.7",
     "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
     "forge-std": "^1.1.2",
     "hardhat": "^3.9.0"
   },
