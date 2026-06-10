@@ -15,7 +15,7 @@ export interface AwsanSultanToken$Type {
   readonly deployedLinkReferences: {};
   readonly immutableReferences: {};
   readonly inputSourceName: "project/contracts/AST.sol";
-  readonly buildInfoId: "solc-0_8_28-2ea3568cf4d6ea83ccc9740dcd6c0dae707ee44b";
+  readonly buildInfoId: "solc-0_8_28-99de858854c965ccb461d0bdabcc027832ed2a58";
 };
 
 import "hardhat/types/artifacts";
