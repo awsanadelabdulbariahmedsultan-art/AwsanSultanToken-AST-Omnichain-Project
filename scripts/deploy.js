@@ -5,14 +5,17 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function main() {
-  console.log("🚀 Initializing Awsan Sultan Ecosystem Deployment...");
+  console.log("🚀 Initializing Awsan Sultan Ecosystem Deployment via Alchemy Gateway...");
 
   const TokenArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanToken.sol:AwsanSultanToken");
   const ArtArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanArt.sol:AwsanSultanArt");
 
-  const networkUrl = process.env.BASE_SEPOLIA_RPC_URL || "https://base.org";
+  const networkUrl = process.env.BASE_SEPOLIA_RPC_URL;
   const privateKey = process.env.PRIVATE_KEY;
 
+  if (!networkUrl) {
+    throw new Error("❌ BASE_SEPOLIA_RPC_URL is missing in your .env file!");
+  }
   if (!privateKey) {
     throw new Error("❌ PRIVATE_KEY is missing in your .env file!");
   }
@@ -25,14 +28,14 @@ async function main() {
   const token = await TokenFactory.deploy();
   await token.waitForDeployment();
   const tokenAddress = await token.getAddress();
-  console.log(`✅ AST Token Deployed at: ${tokenAddress}`);
+  console.log(`✅ AST Token Deployed successfully at: ${tokenAddress}`);
 
   console.log("🎨 Deploying ASA Art...");
   const ArtFactory = new ethers.ContractFactory(ArtArtifact.abi, ArtArtifact.bytecode, wallet);
   const art = await ArtFactory.deploy();
   await art.waitForDeployment();
   const artAddress = await art.getAddress();
-  console.log(`✅ ASA Art Deployed at: ${artAddress}`);
+  console.log(`✅ ASA Art Deployed successfully at: ${artAddress}`);
 }
 
 main().catch((error) => {
