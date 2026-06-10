@@ -16,7 +16,7 @@ contract AwsanSultanArt is ERC721Enumerable, ERC2981, Ownable {
 
     constructor() 
         ERC721("Awsan Sultan Art", "ASA")
-        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)  
+        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)    
     {
         _setDefaultRoyalty(owner(), 1000); // 10% عوائد ثابتة للمهندس أوسان
     }

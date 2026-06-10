@@ -15,7 +15,7 @@ contract AwsanSultanToken is ERC20, ERC20Permit, Ownable {
     constructor() 
         ERC20("Awsan Sultan Token", "AST") 
         ERC20Permit("Awsan Sultan Token")
-        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)  
+        Ownable(0x79Fd74aE9cD16838fD2bf61274CDa5c37dA1f714)    
     {
         _mint(owner(), AST_SUPPLY);
     }
