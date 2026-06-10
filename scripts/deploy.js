@@ -7,11 +7,9 @@ dotenv.config();
 async function main() {
   console.log("🚀 Initializing Awsan Sultan Ecosystem Deployment...");
 
-  # جلب ملفات التجميع الخاصة بالعقود بدقة
   const TokenArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanToken.sol:AwsanSultanToken");
   const ArtArtifact = await hre.artifacts.readArtifact("contracts/AwsanSultanArt.sol:AwsanSultanArt");
 
-  # قراءة الروابط والمفاتيح مباشرة من ملف .env لضمان الاستقرار التام
   const networkUrl = process.env.BASE_SEPOLIA_RPC_URL || "https://base.org";
   const privateKey = process.env.PRIVATE_KEY;
 
